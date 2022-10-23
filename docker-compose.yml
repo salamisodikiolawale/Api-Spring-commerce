@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+ 
+  ecommerce-db:
+    image: "mariadb:10.6.5"
+    restart: always
+    environment:  
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: root
+    volumes:
+      - ecommerce-db:/var/lib/mysql
+    ports:
+      - "3310:3306"
+
+volumes:
+  ecommerce-db:
+    external: true
+
+
+
+#/usr/local/etc/php
